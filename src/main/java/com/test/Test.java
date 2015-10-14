@@ -1,19 +1,19 @@
 package com.test;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import java.util.Calendar;
+import java.util.Date;
 
-//@RestController
-//@EnableAutoConfiguration
 public class Test {
-	//@RequestMapping("/")
 	public String example() {
 		return "Hello World!";
 	}
 	
 	public static void main(String[] args) {
-		SpringApplication.run(Test.class, args);
+		Calendar c1 = new Calendar.Builder().setDate(2015, 9, 14)
+				.setTimeOfDay(10, 30, 0)
+				.build();
+		Date d = c1.getTime();
+		System.out.println(d);
+		System.out.println(d.getTime());
 	}
 }

@@ -1,3 +1,3 @@
-/meetingRoomService/meetingRooms?[state=available]&[user=XXX]
+/meetingRoomService/meetingRooms?[state=available]&[user=XXX]&[from=XXX & to=XXX]
 /meetingRoomService/meetingRooms/{id}
-/meetingRoomService/meetingRooms/book?(user=XXX)
+/meetingRoomService/meetingRooms/{id}/book?(user=XXX)
