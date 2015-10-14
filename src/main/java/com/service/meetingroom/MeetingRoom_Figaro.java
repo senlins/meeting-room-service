@@ -2,16 +2,16 @@ package com.service.meetingroom;
 
 import java.util.List;
 
-public class MeetingRoom {
+public class MeetingRoom_Figaro {
 	private int id;
 	private String name;
-	private List<BookingStatus> booked;
+	private List<BookingStatus_Figaro> booked;
 	
 	
-	public MeetingRoom() {
+	public MeetingRoom_Figaro() {
 	}
 	
-	public MeetingRoom(int id, String name) {
+	public MeetingRoom_Figaro(int id, String name) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -29,11 +29,11 @@ public class MeetingRoom {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public List<BookingStatus> getBooked() {
+	public List<BookingStatus_Figaro> getBooked() {
 		return booked;
 	}
 
-	public void setBooked(List<BookingStatus> booked) {
+	public void setBooked(List<BookingStatus_Figaro> booked) {
 		this.booked = booked;
 	}
 	

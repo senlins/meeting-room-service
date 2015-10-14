@@ -6,15 +6,15 @@ import java.util.Date;
 public class MeetingRoomService {
 	private MeetingRoomDao mrd = new MeetingRoomDao();
 	
-	public Collection<MeetingRoom> getMeetingRooms() {
+	public Collection<MeetingRoom_Figaro> getMeetingRooms() {
 		return mrd.getMeetingRooms();
 	}
 	
-	public MeetingRoom getMeetingRoomById(int id) {
+	public MeetingRoom_Figaro getMeetingRoomById(int id) {
 		return mrd.getMeetingRoomById(id);
 	}
 	
-	public Collection<MeetingRoom> getAvailableMeetingRooms(Date fromDateTime, Date toDateTime) {
+	public Collection<MeetingRoom_Figaro> getAvailableMeetingRooms(Date fromDateTime, Date toDateTime) {
 		return mrd.getAvailableMeetingRooms(fromDateTime, toDateTime);
 	}
 }

@@ -9,40 +9,40 @@ import java.util.List;
 import java.util.Map;
 
 public class MeetingRoomDao {
-	private static Map<Integer, MeetingRoom> meetingRooms = new HashMap<>();
+	private static Map<Integer, MeetingRoom_Figaro> meetingRooms = new HashMap<>();
 
 	static {
 		Date fromDt1 = new Calendar.Builder().setDate(2015, 9, 14).setTimeOfDay(10, 00, 0).build().getTime();
 		Date toDt1 = new Calendar.Builder().setDate(2015, 9, 14).setTimeOfDay(11, 00, 0).build().getTime();
-		BookingStatus b1 = new BookingStatus(fromDt1, toDt1);
+		BookingStatus_Figaro b1 = new BookingStatus_Figaro(fromDt1, toDt1);
 
 		Date fromDt2 = new Calendar.Builder().setDate(2015, 9, 15).setTimeOfDay(16, 00, 0).build().getTime();
 		Date toDt2 = new Calendar.Builder().setDate(2015, 9, 15).setTimeOfDay(17, 00, 0).build().getTime();
-		BookingStatus b2 = new BookingStatus(fromDt2, toDt2);
+		BookingStatus_Figaro b2 = new BookingStatus_Figaro(fromDt2, toDt2);
 		
-		List<BookingStatus> booked = new ArrayList<>();
+		List<BookingStatus_Figaro> booked = new ArrayList<>();
 		booked.add(b1);
 		booked.add(b2);
 
-		MeetingRoom m1 = new MeetingRoom(1, "Paradise");
+		MeetingRoom_Figaro m1 = new MeetingRoom_Figaro(1, "Paradise");
 		m1.setBooked(booked);
 		
-		MeetingRoom m2 = new MeetingRoom(2, "SH");
+		MeetingRoom_Figaro m2 = new MeetingRoom_Figaro(2, "SH");
 		meetingRooms.put(m1.getId(), m1);
 		meetingRooms.put(m2.getId(), m2);
 	}
 
-	public Collection<MeetingRoom> getMeetingRooms() {
+	public Collection<MeetingRoom_Figaro> getMeetingRooms() {
 		return meetingRooms.values();
 	}
 	
-	public MeetingRoom getMeetingRoomById(int id) {
+	public MeetingRoom_Figaro getMeetingRoomById(int id) {
 		return meetingRooms.get(id);
 	}
 
-	public Collection<MeetingRoom> getAvailableMeetingRooms(Date fromDateTime, Date toDateTime) {
-		Collection<MeetingRoom> c = new ArrayList<MeetingRoom>();
-		for (MeetingRoom room : meetingRooms.values()) {
+	public Collection<MeetingRoom_Figaro> getAvailableMeetingRooms(Date fromDateTime, Date toDateTime) {
+		Collection<MeetingRoom_Figaro> c = new ArrayList<MeetingRoom_Figaro>();
+		for (MeetingRoom_Figaro room : meetingRooms.values()) {
 			if (isAvailable(room, fromDateTime, toDateTime)) {
 				c.add(room);
 			}
@@ -50,12 +50,12 @@ public class MeetingRoomDao {
 		return c;
 	}
 	
-	private boolean isAvailable(MeetingRoom room, Date fromDateTime, Date toDateTime) {
+	private boolean isAvailable(MeetingRoom_Figaro room, Date fromDateTime, Date toDateTime) {
 		boolean isAvailable = true;
 		
-		List<BookingStatus> booked = room.getBooked();
+		List<BookingStatus_Figaro> booked = room.getBooked();
 		if (booked != null) {
-			for (BookingStatus bs : booked) {
+			for (BookingStatus_Figaro bs : booked) {
 				Date from = bs.getFromDateTime();
 				Date to = bs.getToDateTime();
 				

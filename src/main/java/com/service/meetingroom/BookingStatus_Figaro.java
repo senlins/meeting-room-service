@@ -2,16 +2,16 @@ package com.service.meetingroom;
 
 import java.util.Date;
 
-public class BookingStatus {
+public class BookingStatus_Figaro {
 	
 	private Date fromDateTime;
 	private Date toDateTime;
 	
-	public BookingStatus() {
+	public BookingStatus_Figaro() {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public BookingStatus(Date fromDateTime, Date toDateTime) {
+	public BookingStatus_Figaro(Date fromDateTime, Date toDateTime) {
 		super();
 		this.fromDateTime = fromDateTime;
 		this.toDateTime = toDateTime;

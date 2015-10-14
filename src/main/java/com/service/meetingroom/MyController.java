@@ -12,21 +12,21 @@ import org.springframework.web.bind.annotation.RestController;
 public class MyController {
 	private MeetingRoomService mrs = new MeetingRoomService();
 
-	@RequestMapping("/meetingRooms")
-	public Collection<MeetingRoom> getMeetingRooms() {
+	@RequestMapping("/meetingRooms_figaro")
+	public Collection<MeetingRoom_Figaro> getMeetingRooms() {
 		return mrs.getMeetingRooms();
 	}
 	
-	@RequestMapping("/meetingRooms/available")
-	public Collection<MeetingRoom> getAvailableMeetingRooms(@RequestParam long fromDateLong, @RequestParam long toDateLong) {
-		Date fromDate = new Date(fromDateLong);
-		Date toDate = new Date(toDateLong);
+	@RequestMapping("/meetingRooms_figaro/available")
+	public Collection<MeetingRoom_Figaro> getAvailableMeetingRooms(@RequestParam long fromDateLong_figaro, @RequestParam long toDateLong_figaro) {
+		Date fromDate = new Date(fromDateLong_figaro);
+		Date toDate = new Date(toDateLong_figaro);
 		return mrs.getAvailableMeetingRooms(fromDate, toDate);
 	}
 	
-	@RequestMapping("/meetingRooms/{id}")
-	public MeetingRoom getMeetingRoomById(@PathVariable int id) {
-		return mrs.getMeetingRoomById(id);
+	@RequestMapping("/meetingRooms_figaro/{id}")
+	public MeetingRoom_Figaro getMeetingRoomById(@PathVariable int id_figaro) {
+		return mrs.getMeetingRoomById(id_figaro);
 	}
 	
 }
