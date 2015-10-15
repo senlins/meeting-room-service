@@ -86,7 +86,14 @@
 				"produces": [
 					"application/json"
 				],
-				"parameters": [],
+				"parameters": [{
+                        "in": "path",
+                        "name": "id",
+                        "description": "ID of meeting room that needs to be fetched",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int32"
+                    }],
 				"responses": {
 					"200": {
 						"description": "SUCCESS",

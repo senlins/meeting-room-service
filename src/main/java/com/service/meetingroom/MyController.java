@@ -24,7 +24,7 @@ public class MyController {
 		return mrs.getAvailableMeetingRooms(fromDate, toDate);
 	}
 	
-	@RequestMapping("/meetingRooms_figaro/{id}")
+	@RequestMapping("/meetingRooms_figaro/{id_figaro}")
 	public MeetingRoom_Figaro getMeetingRoomById(@PathVariable int id_figaro) {
 		return mrs.getMeetingRoomById(id_figaro);
 	}

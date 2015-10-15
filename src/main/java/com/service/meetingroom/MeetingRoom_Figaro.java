@@ -3,38 +3,38 @@ package com.service.meetingroom;
 import java.util.List;
 
 public class MeetingRoom_Figaro {
-	private int id;
-	private String name;
-	private List<BookingStatus_Figaro> booked;
+	private int id_figaro;
+	private String name_figaro;
+	private List<BookingStatus_Figaro> booked_figaro;
 	
 	
 	public MeetingRoom_Figaro() {
 	}
 	
-	public MeetingRoom_Figaro(int id, String name) {
+	public MeetingRoom_Figaro(int id_figaro, String name_figaro) {
 		super();
-		this.id = id;
-		this.name = name;
+		this.id_figaro = id_figaro;
+		this.name_figaro = name_figaro;
 	}
 
-	public int getId() {
-		return id;
+	public int getId_figaro() {
+		return id_figaro;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setId_figaro(int id_figaro) {
+		this.id_figaro = id_figaro;
 	}
-	public String getName() {
-		return name;
+	public String getName_figaro() {
+		return name_figaro;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setName_figaro(String name_figaro) {
+		this.name_figaro = name_figaro;
 	}
-	public List<BookingStatus_Figaro> getBooked() {
-		return booked;
+	public List<BookingStatus_Figaro> getBooked_figaro() {
+		return booked_figaro;
 	}
 
-	public void setBooked(List<BookingStatus_Figaro> booked) {
-		this.booked = booked;
+	public void setBooked_figaro(List<BookingStatus_Figaro> booked_figaro) {
+		this.booked_figaro = booked_figaro;
 	}
 	
 }

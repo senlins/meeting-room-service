@@ -25,11 +25,11 @@ public class MeetingRoomDao {
 		booked.add(b2);
 
 		MeetingRoom_Figaro m1 = new MeetingRoom_Figaro(1, "Paradise");
-		m1.setBooked(booked);
+		m1.setBooked_figaro(booked);
 		
 		MeetingRoom_Figaro m2 = new MeetingRoom_Figaro(2, "SH");
-		meetingRooms.put(m1.getId(), m1);
-		meetingRooms.put(m2.getId(), m2);
+		meetingRooms.put(m1.getId_figaro(), m1);
+		meetingRooms.put(m2.getId_figaro(), m2);
 	}
 
 	public Collection<MeetingRoom_Figaro> getMeetingRooms() {
@@ -53,11 +53,11 @@ public class MeetingRoomDao {
 	private boolean isAvailable(MeetingRoom_Figaro room, Date fromDateTime, Date toDateTime) {
 		boolean isAvailable = true;
 		
-		List<BookingStatus_Figaro> booked = room.getBooked();
+		List<BookingStatus_Figaro> booked = room.getBooked_figaro();
 		if (booked != null) {
 			for (BookingStatus_Figaro bs : booked) {
-				Date from = bs.getFromDateTime();
-				Date to = bs.getToDateTime();
+				Date from = bs.getFromDateTime_figaro();
+				Date to = bs.getToDateTime_Figaro();
 				
 				if ((fromDateTime.after(from) && fromDateTime.before(to) || (toDateTime.after(from) && toDateTime.before(to)))) {
 					isAvailable = false;
